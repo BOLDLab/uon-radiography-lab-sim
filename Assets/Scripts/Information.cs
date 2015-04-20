@@ -122,9 +122,10 @@ public class Information : MonoBehaviour {
 	}
 
 	void OnMouseEnter() {
+
 		if (useConsole) {
 						showConsoleButtonUI (useConsole);
-				}
+		}
 
 		if (null == doorTrigger)
 						return;

@@ -180,13 +180,12 @@ public class InventoryItem : MonoBehaviour
 				return;
 
 		int focusID = GetInstanceID ();
-		if (isOneOf > 0) {
+		/*if (isOneOf > 0) {
 				focusID = gameObject.transform.parent.GetComponent<InventoryGroup> ().GetInstanceID ();
 				app.setCameraLook (transform.parent);
 		} else {
 				app.setCameraLook (transform);
-		}
-
+		}*/
 
 				// guarantee focus on this object
 				if (app.inventoryUIclicks == 0) {

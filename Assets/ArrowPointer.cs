@@ -24,6 +24,9 @@ public class ArrowPointer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void OnMouseEnter () {
+		if (Vector3.Distance (gameObject.transform.position, app.mtl.gameObject.transform.position) < 2.0f)
+			return;
+
 		if (app.thirdPersonCamera.enabled || app.movingObject)
 						return;
 
