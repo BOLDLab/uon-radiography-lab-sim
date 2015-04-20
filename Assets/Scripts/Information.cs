@@ -42,19 +42,31 @@ public class Information : MonoBehaviour {
 	
 	//public bool overrideButtonActivate = false;
 
+<<<<<<< .merge_file_iZL0Uq
 	private int timeDisplayed = 0;
+=======
+	//private int timeDisplayed = 0;
+>>>>>>> .merge_file_CMjgRJ
 
 	public bool disableColliderAtLocation = true;
 
 	private DoorTrigger doorTrigger;
 
 	private Rect infoWindow;
+<<<<<<< .merge_file_iZL0Uq
 	Information[] allInfos;
+=======
+	//Information[] allInfos;
+>>>>>>> .merge_file_CMjgRJ
 
 	public GameObject XRayMenuObject;
 	//private XRayConsole console;
 
+<<<<<<< .merge_file_iZL0Uq
 	private XRayMachineMenu xRayMenu;
+=======
+	//private XRayMachineMenu xRayMenu;
+>>>>>>> .merge_file_CMjgRJ
 
 	public bool useConsole = false;
 
@@ -91,12 +103,21 @@ public class Information : MonoBehaviour {
 
 		infoWindow = new Rect (box_X, box_Y, width, height);
 
+<<<<<<< .merge_file_iZL0Uq
 		allInfos = GameObject.FindObjectsOfType<Information>();
 
 		doorTrigger = gameObject.GetComponent<DoorTrigger> ();
 
 		if(null != XRayMenuObject)
 			xRayMenu = XRayMenuObject.GetComponent<XRayMachineMenu> ();
+=======
+		//allInfos = GameObject.FindObjectsOfType<Information>();
+
+		doorTrigger = gameObject.GetComponent<DoorTrigger> ();
+
+		//if(null != XRayMenuObject)
+			//xRayMenu = XRayMenuObject.GetComponent<XRayMachineMenu> ();
+>>>>>>> .merge_file_CMjgRJ
 	}
 
 	// not implemented
@@ -122,9 +143,14 @@ public class Information : MonoBehaviour {
 	}
 
 	void OnMouseEnter() {
+
 		if (useConsole) {
 						showConsoleButtonUI (useConsole);
+<<<<<<< .merge_file_iZL0Uq
 				}
+=======
+		}
+>>>>>>> .merge_file_CMjgRJ
 
 		if (null == doorTrigger)
 						return;

@@ -27,7 +27,11 @@ public class DoorTrigger : MonoBehaviour {
 
 	public bool makeClickable = false;
 	
+<<<<<<< .merge_file_QAxcP2
 	private Information information;
+=======
+	//private Information information;
+>>>>>>> .merge_file_SnRp0k
 
 	//private short displayCount = 0;
 
@@ -41,7 +45,11 @@ public class DoorTrigger : MonoBehaviour {
 	
 	void Start() {
 		app = AppController.instance;
+<<<<<<< .merge_file_QAxcP2
 		information = gameObject.GetComponent<Information> ();
+=======
+		//information = gameObject.GetComponent<Information> ();
+>>>>>>> .merge_file_SnRp0k
 	}
 	
 	void OnMouseDown() {

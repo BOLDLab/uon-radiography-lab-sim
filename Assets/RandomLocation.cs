@@ -18,7 +18,11 @@ public class RandomLocation : MonoBehaviour {
 	private float oy = 0;
 	private float oz = 0;
 
+<<<<<<< .merge_file_dRKZPP
 	private int count = 0;
+=======
+	//private int count = 0;
+>>>>>>> .merge_file_J2myZW
 	// Use this for initialization
 	void Start () {
 		ox = transform.position.x;

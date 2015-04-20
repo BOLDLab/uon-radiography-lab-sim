@@ -23,8 +23,13 @@ public class InventoryItem : MonoBehaviour
 		//private bool optionIsOpen = false;
 		public float rayCastDistance = 2.0f;
 		public int maxCarried = -1;
+<<<<<<< .merge_file_zoeKsJ
 		float fovTarget = 15.0f;
 		float fov = 60.0f;
+=======
+		//float fovTarget = 15.0f;
+		//float fov = 60.0f;
+>>>>>>> .merge_file_3V5hAC
 		
 		private bool ignoreCollider = false;
 
@@ -180,13 +185,21 @@ public class InventoryItem : MonoBehaviour
 				return;
 
 		int focusID = GetInstanceID ();
+<<<<<<< .merge_file_zoeKsJ
 		if (isOneOf > 0) {
+=======
+		/*if (isOneOf > 0) {
+>>>>>>> .merge_file_3V5hAC
 				focusID = gameObject.transform.parent.GetComponent<InventoryGroup> ().GetInstanceID ();
 				app.setCameraLook (transform.parent);
 		} else {
 				app.setCameraLook (transform);
+<<<<<<< .merge_file_zoeKsJ
 		}
 
+=======
+		}*/
+>>>>>>> .merge_file_3V5hAC
 
 				// guarantee focus on this object
 				if (app.inventoryUIclicks == 0) {
@@ -217,7 +230,11 @@ public class InventoryItem : MonoBehaviour
 						//coroutine = lerpFoV(fovTarget);
 					
 						//StartCoroutine(coroutine); 
+<<<<<<< .merge_file_zoeKsJ
 						fov = fovTarget;
+=======
+						//fov = fovTarget;
+>>>>>>> .merge_file_3V5hAC
 						app.mtl.enabled = false;
 						app.focusedOnItem = true;
 				} else if (app.inventoryUIclicks == 2) {
@@ -238,6 +255,7 @@ public class InventoryItem : MonoBehaviour
 								displayActionButtons (false);
 								
 						}
+<<<<<<< .merge_file_zoeKsJ
 						if (app.lastLookedInfo) {
 								//coroutine = lerpFoV(app.lastLookedInfo.fieldOfView);
 								fov = app.lastLookedInfo.fieldOfView;
@@ -245,6 +263,9 @@ public class InventoryItem : MonoBehaviour
 								//coroutine = lerpFoV(60.0f);
 								fov = 60.0f;
 						}
+=======
+						
+>>>>>>> .merge_file_3V5hAC
 						app.mtl.enabled = false;
 				} else {
 			app.mtl.enabled = true;

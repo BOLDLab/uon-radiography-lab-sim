@@ -4,8 +4,13 @@ using System.Collections;
 public class ArrowPointer : MonoBehaviour {
 	
 	private AppController app;
+<<<<<<< .merge_file_lZQZVg
 	Transform target;
 	Vector3 focusHere;
+=======
+	//Transform target;
+	//Vector3 focusHere;
+>>>>>>> .merge_file_mmxJud
 
 	bool mouseOver = false;
   	
@@ -15,8 +20,13 @@ public class ArrowPointer : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		app = AppController.instance;
+<<<<<<< .merge_file_lZQZVg
 		target = Camera.main.transform;
 		focusHere = gameObject.transform.position;
+=======
+		//target = Camera.main.transform;
+		//focusHere = gameObject.transform.position;
+>>>>>>> .merge_file_mmxJud
 
 		//fixedLocation = 
 		//app.pointer.SetActive (false);
@@ -24,6 +34,9 @@ public class ArrowPointer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void OnMouseEnter () {
+		if (Vector3.Distance (gameObject.transform.position, app.mtl.gameObject.transform.position) < 2.0f)
+			return;
+
 		if (app.thirdPersonCamera.enabled || app.movingObject)
 						return;
 

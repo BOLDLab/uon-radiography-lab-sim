@@ -78,6 +78,11 @@ public class MoveToLocation : MonoBehaviour {
 								!app.mouseOnOpenTrigger) {
 								
 								app.closeInfoPanel ();
+								
+								GameObject temp = new GameObject();
+								temp.transform.position= Vector3.forward;
+								LookaMe = temp.transform;
+
 								if (app.lastLookedInfo != null && app.thirdPersonCamera.enabled) {			
 			
 										app.toggleRenderers (Camera.main.gameObject.transform.parent.gameObject, true);

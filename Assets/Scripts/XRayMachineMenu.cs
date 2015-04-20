@@ -6,7 +6,11 @@ public class XRayMachineMenu : MonoBehaviour {
 	public float box_X = 20;
 	public float box_Y = 60;
 	private float width = 350;
+<<<<<<< .merge_file_Zx6pbb
 	private float height = 180;
+=======
+	//private float height = 180;
+>>>>>>> .merge_file_S0tNrG
 	
 	//private bool useButton = true;
 	public float button_X = 5;

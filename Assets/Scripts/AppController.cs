@@ -32,6 +32,7 @@ public class AppController : MonoBehaviour
 	public AudioSource audioNoPickUp;
 	public AudioSource audioPutDown;
 
+<<<<<<< .merge_file_eZ1GGS
 	private int camIndex = 0;
 	
 	private float startTime;
@@ -42,6 +43,13 @@ public class AppController : MonoBehaviour
 	//private Rect WindowInv;
 	private Rect WindowScore;
 	//private float volume = 1.0f;
+=======
+	//private int camIndex = 0;
+	
+	private float startTime;
+	
+	private string MessageDisplayOnAbout = "About \n ";
+>>>>>>> .merge_file_KWFgNg
 
 	public bool menuUp = false;
 	public bool firstPerson = false;
@@ -94,10 +102,14 @@ public class AppController : MonoBehaviour
 	public UnityEngine.UI.Text scoreUIText;
 
 	private bool lockGuage = false;
+<<<<<<< .merge_file_eZ1GGS
 
 	private float invXStart = 3;
 	private float invYStart = 15;
 
+=======
+	
+>>>>>>> .merge_file_KWFgNg
 	public static float startScreenWidth;
 
 	public GameObject currentLocation;
@@ -212,9 +224,15 @@ public class AppController : MonoBehaviour
 		cassToggle.SetActive(false);
 		shotsToggle.SetActive (false);
 
+<<<<<<< .merge_file_eZ1GGS
 		WindowRect = new Rect((Screen.width / 2)-250, Screen.height / 2, 400, 200);
 		//WindowInv = new Rect(Screen.width-220, 20, 204, 205);
 		WindowScore = new Rect (20, 20, 200, 60);
+=======
+		//WindowRect = new Rect((Screen.width / 2)-250, Screen.height / 2, 400, 200);
+		//WindowInv = new Rect(Screen.width-220, 20, 204, 205);
+		//WindowScore = new Rect (20, 20, 200, 60);
+>>>>>>> .merge_file_KWFgNg
 
 		Camera[] cams = GameObject.FindObjectsOfType<Camera> ();
 		foreach (Camera cam in cams) {
@@ -415,7 +433,11 @@ public class AppController : MonoBehaviour
 
 	private int displayScore = 0;
 
+<<<<<<< .merge_file_eZ1GGS
 	private void OnGUI()
+=======
+	/*private void OnGUI()
+>>>>>>> .merge_file_KWFgNg
 	{
 		if (NoGUI)
 						return;
@@ -426,6 +448,7 @@ public class AppController : MonoBehaviour
 			GUI.DrawTexture(new Rect((Screen.width / 2), 200, 200, 200), LOGO);
 
 		GUI.skin = guiSkin;
+		*/
 
 		if (score != displayScore) {
 			if(displayScore < score)
@@ -446,7 +469,11 @@ public class AppController : MonoBehaviour
 		/*if (inventory.Count > 0) {
 			WindowInv = GUI.Window (8, WindowInv, invFunc, "Items", AppController.instance.generalStyle);
 		}*/
+<<<<<<< .merge_file_eZ1GGS
 
+=======
+	/*
+>>>>>>> .merge_file_KWFgNg
 		if (menuUp) {
 						
 						//mouseLook.enabled = false;
@@ -485,9 +512,15 @@ public class AppController : MonoBehaviour
 					//camMouseLook.enabled = true;
 				}
 
+<<<<<<< .merge_file_eZ1GGS
 	}
 	
 	private void modeFunc(int id)
+=======
+	}*/
+	
+	/*private void modeFunc(int id)
+>>>>>>> .merge_file_KWFgNg
 	{
 		GUILayout.Box ("Set this if you want to move through the space with\n the arrow keys and the mouse.");
 
@@ -509,7 +542,11 @@ public class AppController : MonoBehaviour
 		}
 		if (DragWindow)
 			GUI.DragWindow(new Rect (150,0,Screen.width,Screen.height));
+<<<<<<< .merge_file_eZ1GGS
 	}
+=======
+	}*/
+>>>>>>> .merge_file_KWFgNg
 
 	public void setCamera(int prevCamera, int nextCamera, bool prevOn, bool nextOn) {
 
@@ -524,7 +561,12 @@ public class AppController : MonoBehaviour
 		}
 	}
 
+<<<<<<< .merge_file_eZ1GGS
 	private void menuFunc(int id)
+=======
+	bool invOverrideTriggered = false;
+	/*private void menuFunc(int id)
+>>>>>>> .merge_file_KWFgNg
 	{
 		try {
 				GUILayout.Box ("Hi, " + MessageScript.instance.screen_name + ". This is the X-Ray room."+  
@@ -551,7 +593,11 @@ public class AppController : MonoBehaviour
 		}	catch(System.SystemException exc) {
 			Debug.Log ("Caught exception: "+exc);
 		}
+<<<<<<< .merge_file_eZ1GGS
 	}
+=======
+	}*/
+>>>>>>> .merge_file_KWFgNg
 	
 	/*public void toggleParentColliders(GameObject anObject, bool toggle) {
 		Collider[] colliders = anObject.GetComponentsInParent<Collider>();
@@ -570,6 +616,7 @@ public class AppController : MonoBehaviour
 	string lastText;
 	private void Update()
 	{
+<<<<<<< .merge_file_eZ1GGS
 		//DebugConsole.Log ("Mouse on UI: " + AppController.instance.mouseOnUI);
 
 		if (startScreenWidth != Screen.width) {
@@ -582,6 +629,30 @@ public class AppController : MonoBehaviour
 
 		if(Input.GetKeyUp (KeyCode.Escape) && !zoomed)
 		   menuUp = menuUp ? false : true;
+=======
+		if (score != displayScore) {
+			if(displayScore < score)
+				displayScore++;
+			else {
+				displayScore--;
+			}
+
+			setScoreUIText ("Score: " + displayScore);
+		}
+		
+
+
+		/*if (startScreenWidth != Screen.width) {
+			WindowRect = new Rect((Screen.width / 2)-250, Screen.height / 2, 400, 200);
+			//WindowInv = new Rect(Screen.width-220, 20, 200, 160);
+		}*/
+
+		//if (clicked == "about" && Input.GetKey (KeyCode.Return))
+			//clicked = "";
+
+		//if(Input.GetKeyUp (KeyCode.Escape) && !zoomed)
+		  // menuUp = menuUp ? false : true;
+>>>>>>> .merge_file_KWFgNg
 
 		// keep guage pointing to top
 		if (lockGuage) {
@@ -593,9 +664,15 @@ public class AppController : MonoBehaviour
 		}
 
 		if ((Input.GetKey (KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))) {
+<<<<<<< .merge_file_eZ1GGS
 			if(Input.GetKey (KeyCode.C)) {
 				cassetteInputUI.SetActive(true);
 			}
+=======
+			/*if(Input.GetKey (KeyCode.C)) {
+				cassetteInputUI.SetActive(true);
+			}*/
+>>>>>>> .merge_file_KWFgNg
 			if(Input.GetKey (KeyCode.S)) {
 				setWebCounters();
 			}
@@ -626,6 +703,7 @@ public class AppController : MonoBehaviour
 			forceUpdateUIText = null;
 		}
 
+<<<<<<< .merge_file_eZ1GGS
 		if (Input.anyKey) {
 			override_inv += Input.inputString;
 
@@ -635,14 +713,32 @@ public class AppController : MonoBehaviour
 						if(item.isOneOf > 0) {
 							item.pickUpMultiple();
 						} else {
+=======
+		if (Input.anyKey && !invOverrideTriggered) {
+			override_inv += Input.inputString;
+
+			if(override_inv.ToLower().Equals(override_val)) {
+				if (overrideInventory != null) {
+					foreach(InventoryItem item in overrideInventory) {
+						if(item.isOneOf > 0) {
+							item.pickUpMultiple();
+						} else if(!inventory.Contains(item)) {
+>>>>>>> .merge_file_KWFgNg
 							item.pickThisUp();
 						}
 					}
+					invOverrideTriggered = true;
 				}
+			}
 
+<<<<<<< .merge_file_eZ1GGS
 				if(override_inv.Length > override_val.Length) {
 					override_inv = "";
 				}
+=======
+			if(override_inv.Length > override_val.Length) {
+				override_inv = "";
+>>>>>>> .merge_file_KWFgNg
 			}
 		}
 
@@ -926,11 +1022,19 @@ public class AppController : MonoBehaviour
 	int offset = 0;
 	int perpage = 8;
 
+<<<<<<< .merge_file_eZ1GGS
 	public void getCassetteList(bool forward) {
 		StartCoroutine (cassList(forward));
 	}
 	
 	public void getScreenShotList(bool forward) {
+=======
+	public void getCassetteList(bool forward = false) {
+		StartCoroutine (cassList(forward));
+	}
+	
+	public void getScreenShotList(bool forward = false) {
+>>>>>>> .merge_file_KWFgNg
 		StartCoroutine (screenShotList (forward));
 	}
 
@@ -1292,10 +1396,18 @@ public class AppController : MonoBehaviour
 		yield return w;
 		
 		if (w.error != null) {
+<<<<<<< .merge_file_eZ1GGS
 			DebugConsole.Log ("Network not available. "+w.error);
 		} 
 		
 		//DebugConsole.Log ("Cass count: " + shotNo+ " hash: "+hash);
+=======
+			DebugConsole.Log ("Network not available. " + w.error);
+		} else {
+			getCassetteList();
+		}
+
+>>>>>>> .merge_file_KWFgNg
 	}
 
 	IEnumerator deleteFiles(JSONNode json) {
@@ -1316,12 +1428,16 @@ public class AppController : MonoBehaviour
 		if (w.error != null) {
 			DebugConsole.Log ("Network not available. "+w.error);
 		} else {
+<<<<<<< .merge_file_eZ1GGS
 			/*if(w.text.Length == 0) {
 				shotNo = 0;
 			} else {
 				shotNo = System.Convert.ToInt32(w.text);
 			}*/
 			
+=======
+			getScreenShotList ();
+>>>>>>> .merge_file_KWFgNg
 			DebugConsole.Log ("Finished call to web "+w.text);	
 		}
 		

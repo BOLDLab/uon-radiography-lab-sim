@@ -3,7 +3,11 @@ using System.Collections;
 
 public class CassetteInsertX : MonoBehaviour {
 	
+<<<<<<< .merge_file_EpIyZS
 	private bool showText = false;
+=======
+	//private bool showText = false;
+>>>>>>> .merge_file_LM2cqj
 	private bool optionIsOpen = false;
 	private Rect optionRect;
 	
@@ -26,7 +30,11 @@ public class CassetteInsertX : MonoBehaviour {
 	bool slide = false;
 	bool isIn = false;
 
+<<<<<<< .merge_file_EpIyZS
 	bool finished = false;
+=======
+	//bool finished = false;
+>>>>>>> .merge_file_LM2cqj
 	
 	UnityEngine.UI.Button button1;
 	UnityEngine.UI.Button button2;
@@ -34,17 +42,35 @@ public class CassetteInsertX : MonoBehaviour {
 	
 	Vector3 trayStartPos;
 	public GameObject trayEndPos;
+
+	bool b1init = false;
+	bool b2init = false;
 	// Use this for initialization
 	void Start () {
 		//gameObject.AddComponent<Rollover3D> ();
 		app = AppController.instance;
 
 		anim = scanner.GetComponent<Animator> ();
+		b1init = app.actionButton1.activeInHierarchy;
+		b2init = app.actionButton2.activeInHierarchy;
+
+		if(!b1init) 
+			app.actionButton1.SetActive (true);
+		
+		if(!b2init) 
+			app.actionButton2.SetActive (true);
 
 		button1 = app.actionButton1.GetComponent<UnityEngine.UI.Button> ();	
 		button2 = app.actionButton2.GetComponent<UnityEngine.UI.Button> ();
 		butText = button1.GetComponentInChildren<UnityEngine.UI.Text> ();
+<<<<<<< .merge_file_EpIyZS
 		
+=======
+
+		app.actionButton1.SetActive (b1init);
+		app.actionButton1.SetActive (b2init);
+
+>>>>>>> .merge_file_LM2cqj
 		trayStartPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 	}
 	
@@ -77,17 +103,27 @@ public class CassetteInsertX : MonoBehaviour {
 		if (cassette == null) {
 			//app.actionButton2.SetActive (true);
 			cassette = app.getCassetteFromInv (); 
+<<<<<<< .merge_file_EpIyZS
 		} else {
+=======
+		} 
+		if (cassette != null) { 
+>>>>>>> .merge_file_LM2cqj
 			button1.gameObject.SetActive (true);
 		}
 
 		app.invPointer.SetActive (false);
+		button1.onClick.RemoveAllListeners ();
 
 		if (isIn) {
 			app.setInfoUIText (removeMessage);
 			
 			button1.gameObject.SetActive (true);
+<<<<<<< .merge_file_EpIyZS
 			button1.onClick.RemoveAllListeners ();
+=======
+
+>>>>>>> .merge_file_LM2cqj
 			butText.enabled = true;
 			butText.text = buttonText;
 			
@@ -103,7 +139,11 @@ public class CassetteInsertX : MonoBehaviour {
 			optionIsOpen = true;
 			app.setInfoUIText ("Insert the " + cassette.GetComponent<InventoryItem> ().displayName);
 			button1.gameObject.SetActive (true);
+<<<<<<< .merge_file_EpIyZS
 			button1.onClick.RemoveAllListeners ();
+=======
+			//button1.onClick.RemoveAllListeners ();
+>>>>>>> .merge_file_LM2cqj
 			butText.enabled = true;
 			butText.text = "Insert Cassette";
 			
@@ -174,7 +214,11 @@ public class CassetteInsertX : MonoBehaviour {
 	IEnumerator afterAnimComplete() {
 
 		optionIsOpen = false;
+<<<<<<< .merge_file_EpIyZS
 		showText = false;
+=======
+		//showText = false;
+>>>>>>> .merge_file_LM2cqj
 		InventoryItem item = cassette.GetComponent<InventoryItem> ();
 		app.inventory.removeItem(item);
 		item.gameObject.SetActive (true);
