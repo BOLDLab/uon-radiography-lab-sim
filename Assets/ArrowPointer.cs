@@ -4,8 +4,8 @@ using System.Collections;
 public class ArrowPointer : MonoBehaviour {
 	
 	private AppController app;
-	Transform target;
-	Vector3 focusHere;
+	//Transform target;
+	//Vector3 focusHere;
 
 	bool mouseOver = false;
   	
@@ -15,8 +15,8 @@ public class ArrowPointer : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		app = AppController.instance;
-		target = Camera.main.transform;
-		focusHere = gameObject.transform.position;
+		//target = Camera.main.transform;
+		//focusHere = gameObject.transform.position;
 
 		//fixedLocation = 
 		//app.pointer.SetActive (false);

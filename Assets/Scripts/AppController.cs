@@ -32,16 +32,11 @@ public class AppController : MonoBehaviour
 	public AudioSource audioNoPickUp;
 	public AudioSource audioPutDown;
 
-	private int camIndex = 0;
+	//private int camIndex = 0;
 	
 	private float startTime;
 	
-	private string clicked = "mainMenu", MessageDisplayOnAbout = "About \n ";
-
-	private Rect WindowRect;
-	//private Rect WindowInv;
-	private Rect WindowScore;
-	//private float volume = 1.0f;
+	private string MessageDisplayOnAbout = "About \n ";
 
 	public bool menuUp = false;
 	public bool firstPerson = false;
@@ -94,10 +89,7 @@ public class AppController : MonoBehaviour
 	public UnityEngine.UI.Text scoreUIText;
 
 	private bool lockGuage = false;
-
-	private float invXStart = 3;
-	private float invYStart = 15;
-
+	
 	public static float startScreenWidth;
 
 	public GameObject currentLocation;
@@ -212,9 +204,9 @@ public class AppController : MonoBehaviour
 		cassToggle.SetActive(false);
 		shotsToggle.SetActive (false);
 
-		WindowRect = new Rect((Screen.width / 2)-250, Screen.height / 2, 400, 200);
+		//WindowRect = new Rect((Screen.width / 2)-250, Screen.height / 2, 400, 200);
 		//WindowInv = new Rect(Screen.width-220, 20, 204, 205);
-		WindowScore = new Rect (20, 20, 200, 60);
+		//WindowScore = new Rect (20, 20, 200, 60);
 
 		Camera[] cams = GameObject.FindObjectsOfType<Camera> ();
 		foreach (Camera cam in cams) {
@@ -415,7 +407,7 @@ public class AppController : MonoBehaviour
 
 	private int displayScore = 0;
 
-	private void OnGUI()
+	/*private void OnGUI()
 	{
 		if (NoGUI)
 						return;
@@ -426,16 +418,8 @@ public class AppController : MonoBehaviour
 			GUI.DrawTexture(new Rect((Screen.width / 2), 200, 200, 200), LOGO);
 
 		GUI.skin = guiSkin;
+		*/
 
-		if (score != displayScore) {
-			if(displayScore < score)
-				displayScore++;
-			else {
-				displayScore--;
-			}
-		}
-
-		setScoreUIText ("Score: " + displayScore);
 		//GUI.Window (12, WindowScore, scoreFunc, "Score: "+displayScore, generalStyle);
 
 		/*if (null != fpController) {
@@ -446,7 +430,7 @@ public class AppController : MonoBehaviour
 		/*if (inventory.Count > 0) {
 			WindowInv = GUI.Window (8, WindowInv, invFunc, "Items", AppController.instance.generalStyle);
 		}*/
-
+	/*
 		if (menuUp) {
 						
 						//mouseLook.enabled = false;
@@ -485,9 +469,9 @@ public class AppController : MonoBehaviour
 					//camMouseLook.enabled = true;
 				}
 
-	}
+	}*/
 	
-	private void modeFunc(int id)
+	/*private void modeFunc(int id)
 	{
 		GUILayout.Box ("Set this if you want to move through the space with\n the arrow keys and the mouse.");
 
@@ -503,13 +487,9 @@ public class AppController : MonoBehaviour
 						toggleRollOvers(!firstPerson);
 		}
 
-		if (GUILayout.Button("Back"))
-		{
-			clicked = "mainMenu";
-		}
 		if (DragWindow)
 			GUI.DragWindow(new Rect (150,0,Screen.width,Screen.height));
-	}
+	}*/
 
 	public void setCamera(int prevCamera, int nextCamera, bool prevOn, bool nextOn) {
 
@@ -524,7 +504,7 @@ public class AppController : MonoBehaviour
 		}
 	}
 
-	private void menuFunc(int id)
+	/*private void menuFunc(int id)
 	{
 		try {
 				GUILayout.Box ("Hi, " + MessageScript.instance.screen_name + ". This is the X-Ray room."+  
@@ -551,7 +531,7 @@ public class AppController : MonoBehaviour
 		}	catch(System.SystemException exc) {
 			Debug.Log ("Caught exception: "+exc);
 		}
-	}
+	}*/
 	
 	/*public void toggleParentColliders(GameObject anObject, bool toggle) {
 		Collider[] colliders = anObject.GetComponentsInParent<Collider>();
@@ -570,18 +550,28 @@ public class AppController : MonoBehaviour
 	string lastText;
 	private void Update()
 	{
-		//DebugConsole.Log ("Mouse on UI: " + AppController.instance.mouseOnUI);
+		if (score != displayScore) {
+			if(displayScore < score)
+				displayScore++;
+			else {
+				displayScore--;
+			}
 
-		if (startScreenWidth != Screen.width) {
+			setScoreUIText ("Score: " + displayScore);
+		}
+		
+
+
+		/*if (startScreenWidth != Screen.width) {
 			WindowRect = new Rect((Screen.width / 2)-250, Screen.height / 2, 400, 200);
 			//WindowInv = new Rect(Screen.width-220, 20, 200, 160);
-		}
+		}*/
 
-		if (clicked == "about" && Input.GetKey (KeyCode.Return))
-			clicked = "";
+		//if (clicked == "about" && Input.GetKey (KeyCode.Return))
+			//clicked = "";
 
-		if(Input.GetKeyUp (KeyCode.Escape) && !zoomed)
-		   menuUp = menuUp ? false : true;
+		//if(Input.GetKeyUp (KeyCode.Escape) && !zoomed)
+		  // menuUp = menuUp ? false : true;
 
 		// keep guage pointing to top
 		if (lockGuage) {
@@ -593,9 +583,9 @@ public class AppController : MonoBehaviour
 		}
 
 		if ((Input.GetKey (KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))) {
-			if(Input.GetKey (KeyCode.C)) {
+			/*if(Input.GetKey (KeyCode.C)) {
 				cassetteInputUI.SetActive(true);
-			}
+			}*/
 			if(Input.GetKey (KeyCode.S)) {
 				setWebCounters();
 			}

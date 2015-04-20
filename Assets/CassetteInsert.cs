@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CassetteInsert : MonoBehaviour {
 
-	private bool showText = false;
+	//private bool showText = false;
 	private bool optionIsOpen = false;
 	private Rect optionRect;
 
@@ -33,8 +33,11 @@ public class CassetteInsert : MonoBehaviour {
 		//gameObject.AddComponent<Rollover3D> ();
 		app = AppController.instance;
 
-		//app.actionButton1.SetActive (true);
-		//app.actionButton2.SetActive (true);
+		if(!app.actionButton1.activeInHierarchy) 
+			app.actionButton1.SetActive (true);
+		
+		if(!app.actionButton2.activeInHierarchy) 
+			app.actionButton2.SetActive (true);
 
 	 	button1 = app.actionButton1.GetComponent<UnityEngine.UI.Button> ();	
 		button2 = app.actionButton2.GetComponent<UnityEngine.UI.Button> ();
@@ -119,7 +122,7 @@ public class CassetteInsert : MonoBehaviour {
 						return;
 
 		optionIsOpen = false;
-		showText = false;
+		//showText = false;
 		InventoryItem item = cassette.GetComponent<InventoryItem> ();
 		app.inventory.removeItem(item);
 		

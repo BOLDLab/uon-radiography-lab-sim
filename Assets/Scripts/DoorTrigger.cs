@@ -27,7 +27,7 @@ public class DoorTrigger : MonoBehaviour {
 
 	public bool makeClickable = false;
 	
-	private Information information;
+	//private Information information;
 
 	//private short displayCount = 0;
 
@@ -41,7 +41,7 @@ public class DoorTrigger : MonoBehaviour {
 	
 	void Start() {
 		app = AppController.instance;
-		information = gameObject.GetComponent<Information> ();
+		//information = gameObject.GetComponent<Information> ();
 	}
 	
 	void OnMouseDown() {

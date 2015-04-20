@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CassetteInsertX : MonoBehaviour {
 	
-	private bool showText = false;
+	//private bool showText = false;
 	private bool optionIsOpen = false;
 	private Rect optionRect;
 	
@@ -26,7 +26,7 @@ public class CassetteInsertX : MonoBehaviour {
 	bool slide = false;
 	bool isIn = false;
 
-	bool finished = false;
+	//bool finished = false;
 	
 	UnityEngine.UI.Button button1;
 	UnityEngine.UI.Button button2;
@@ -41,10 +41,16 @@ public class CassetteInsertX : MonoBehaviour {
 
 		anim = scanner.GetComponent<Animator> ();
 
+		if(!app.actionButton1.activeInHierarchy) 
+			app.actionButton1.SetActive (true);
+
+		if(!app.actionButton2.activeInHierarchy) 
+			app.actionButton2.SetActive (true);
+
 		button1 = app.actionButton1.GetComponent<UnityEngine.UI.Button> ();	
 		button2 = app.actionButton2.GetComponent<UnityEngine.UI.Button> ();
 		butText = button1.GetComponentInChildren<UnityEngine.UI.Text> ();
-		
+
 		trayStartPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 	}
 	
@@ -174,7 +180,7 @@ public class CassetteInsertX : MonoBehaviour {
 	IEnumerator afterAnimComplete() {
 
 		optionIsOpen = false;
-		showText = false;
+		//showText = false;
 		InventoryItem item = cassette.GetComponent<InventoryItem> ();
 		app.inventory.removeItem(item);
 		item.gameObject.SetActive (true);

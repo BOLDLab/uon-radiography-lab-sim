@@ -23,8 +23,8 @@ public class InventoryItem : MonoBehaviour
 		//private bool optionIsOpen = false;
 		public float rayCastDistance = 2.0f;
 		public int maxCarried = -1;
-		float fovTarget = 15.0f;
-		float fov = 60.0f;
+		//float fovTarget = 15.0f;
+		//float fov = 60.0f;
 		
 		private bool ignoreCollider = false;
 
@@ -217,7 +217,7 @@ public class InventoryItem : MonoBehaviour
 						//coroutine = lerpFoV(fovTarget);
 					
 						//StartCoroutine(coroutine); 
-						fov = fovTarget;
+						//fov = fovTarget;
 						app.mtl.enabled = false;
 						app.focusedOnItem = true;
 				} else if (app.inventoryUIclicks == 2) {
@@ -238,13 +238,7 @@ public class InventoryItem : MonoBehaviour
 								displayActionButtons (false);
 								
 						}
-						if (app.lastLookedInfo) {
-								//coroutine = lerpFoV(app.lastLookedInfo.fieldOfView);
-								fov = app.lastLookedInfo.fieldOfView;
-						} else {
-								//coroutine = lerpFoV(60.0f);
-								fov = 60.0f;
-						}
+						
 						app.mtl.enabled = false;
 				} else {
 			app.mtl.enabled = true;

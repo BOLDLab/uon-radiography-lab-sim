@@ -9,12 +9,6 @@ public class CamTrigger : MonoBehaviour {
 
 		public string context = "";
 		public int camIndex;
-
-		private static FirstPersonActions menuActions;
-		// Use this for initialization
-		void Start () {
-			menuActions = GameObject.FindObjectOfType<FirstPersonActions> ();
-		}
 		
 		// Update is called once per frame
 		void Update () {

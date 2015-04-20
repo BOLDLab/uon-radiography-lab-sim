@@ -18,7 +18,7 @@ public class RandomLocation : MonoBehaviour {
 	private float oy = 0;
 	private float oz = 0;
 
-	private int count = 0;
+	//private int count = 0;
 	// Use this for initialization
 	void Start () {
 		ox = transform.position.x;

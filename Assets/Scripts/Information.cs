@@ -42,19 +42,19 @@ public class Information : MonoBehaviour {
 	
 	//public bool overrideButtonActivate = false;
 
-	private int timeDisplayed = 0;
+	//private int timeDisplayed = 0;
 
 	public bool disableColliderAtLocation = true;
 
 	private DoorTrigger doorTrigger;
 
 	private Rect infoWindow;
-	Information[] allInfos;
+	//Information[] allInfos;
 
 	public GameObject XRayMenuObject;
 	//private XRayConsole console;
 
-	private XRayMachineMenu xRayMenu;
+	//private XRayMachineMenu xRayMenu;
 
 	public bool useConsole = false;
 
@@ -91,12 +91,12 @@ public class Information : MonoBehaviour {
 
 		infoWindow = new Rect (box_X, box_Y, width, height);
 
-		allInfos = GameObject.FindObjectsOfType<Information>();
+		//allInfos = GameObject.FindObjectsOfType<Information>();
 
 		doorTrigger = gameObject.GetComponent<DoorTrigger> ();
 
-		if(null != XRayMenuObject)
-			xRayMenu = XRayMenuObject.GetComponent<XRayMachineMenu> ();
+		//if(null != XRayMenuObject)
+			//xRayMenu = XRayMenuObject.GetComponent<XRayMachineMenu> ();
 	}
 
 	// not implemented

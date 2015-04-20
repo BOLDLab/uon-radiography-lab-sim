@@ -3,12 +3,12 @@ using System.Collections;
 
 public class Barrier : MonoBehaviour {
 	//Vector3 v3player;
-	Vector3 v3origin;
+	//Vector3 v3origin;
 	MoveToLocation mv;
 	//Collision col;	
 	// Use this for initialization
 	void Start () {
-		v3origin = transform.position;
+		//v3origin = transform.position;
 		mv = AppController.instance.mtl;
 	}
 
@@ -19,16 +19,14 @@ public class Barrier : MonoBehaviour {
 	void Update () {
 		if(mv == null) mv = AppController.instance.mtl;
 
-		if (v3origin != null) {
+		//if (v3origin != null) {
 			if(mv.bouncingBack) {
 				mv.getAgent().transform.Translate(Vector3.back * _f);
 				if(Vector3.Distance (mv.getAgent ().transform.position, mv.bounceBackPosition) < _f) {
 					mv.bouncingBack = false;
 				}
 			}	
-		}
-		
-
+	//	}
 	}
 
 	//float str = 2.0f;
@@ -40,7 +38,7 @@ public class Barrier : MonoBehaviour {
 		//Debug.Log ("Barrier: " + gameObject.name+ "go: "+col.gameObject.name);
 
 		if (!colliding && !mv.bouncingBack) { 
-			v3origin = mv.getAgent().transform.position;
+			//v3origin = mv.getAgent().transform.position;
 			//mv.getAgent().destination = mv.bounceBackPosition;
 			mv.getAgent().Stop ();
 			mv.hitBarrier = true;
