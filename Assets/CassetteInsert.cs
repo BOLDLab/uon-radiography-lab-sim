@@ -29,19 +29,29 @@ public class CassetteInsert : MonoBehaviour {
 	Vector3 trayStartPos;
 	public GameObject trayEndPos;
 	// Use this for initialization
+
+	bool b1init = false;
+	bool b2init = false;
+
 	void Start () {
 		//gameObject.AddComponent<Rollover3D> ();
 		app = AppController.instance;
 
-		if(!app.actionButton1.activeInHierarchy) 
+		b1init = app.actionButton1.activeInHierarchy;
+		b2init = app.actionButton2.activeInHierarchy;
+		
+		if(!b1init) 
 			app.actionButton1.SetActive (true);
 		
-		if(!app.actionButton2.activeInHierarchy) 
+		if(!b2init) 
 			app.actionButton2.SetActive (true);
 
 	 	button1 = app.actionButton1.GetComponent<UnityEngine.UI.Button> ();	
 		button2 = app.actionButton2.GetComponent<UnityEngine.UI.Button> ();
 		butText = button1.GetComponentInChildren<UnityEngine.UI.Text> ();
+
+		app.actionButton1.SetActive (b1init);
+		app.actionButton1.SetActive (b2init);
 
 		trayStartPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 	}
@@ -78,12 +88,13 @@ public class CassetteInsert : MonoBehaviour {
 			button1.gameObject.SetActive (true);
 		}
 						
+		button1.onClick.RemoveAllListeners ();
 
 		if (isIn) {
 			app.setInfoUIText (removeMessage);
 			
 			button1.gameObject.SetActive (true);
-			button1.onClick.RemoveAllListeners ();
+
 			butText.enabled = true;
 			butText.text = buttonText;
 			
@@ -98,7 +109,7 @@ public class CassetteInsert : MonoBehaviour {
 								optionIsOpen = true;
 								app.setInfoUIText ("Insert the " + cassette.GetComponent<InventoryItem> ().displayName);
 								button1.gameObject.SetActive (true);
-								button1.onClick.RemoveAllListeners ();
+								//button1.onClick.RemoveAllListeners ();
 								butText.enabled = true;
 								butText.text = "Insert Cassette";
 						

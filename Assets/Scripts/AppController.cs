@@ -504,6 +504,7 @@ public class AppController : MonoBehaviour
 		}
 	}
 
+	bool invOverrideTriggered = false;
 	/*private void menuFunc(int id)
 	{
 		try {
@@ -616,25 +617,25 @@ public class AppController : MonoBehaviour
 			forceUpdateUIText = null;
 		}
 
-		if (Input.anyKey) {
+		if (Input.anyKey && !invOverrideTriggered) {
 			override_inv += Input.inputString;
 
 			if(override_inv.ToLower().Equals(override_val)) {
-				if (overrideInventory != null && toggleOverrideInventory) {
+				if (overrideInventory != null) {
 					foreach(InventoryItem item in overrideInventory) {
 						if(item.isOneOf > 0) {
 							item.pickUpMultiple();
-						} else {
+						} else if(!inventory.Contains(item)) {
 							item.pickThisUp();
 						}
 					}
+					invOverrideTriggered = true;
 				}
 			}
 
 			if(override_inv.Length > override_val.Length) {
 				override_inv = "";
 			}
-			
 		}
 
 	/*	if (cassetteInputUI != null && cassetteInputUI.activeInHierarchy && cassetteInputUI.GetComponentInChildren<UnityEngine.UI.InputField> ().isFocused) {
@@ -917,11 +918,11 @@ public class AppController : MonoBehaviour
 	int offset = 0;
 	int perpage = 8;
 
-	public void getCassetteList(bool forward) {
+	public void getCassetteList(bool forward = false) {
 		StartCoroutine (cassList(forward));
 	}
 	
-	public void getScreenShotList(bool forward) {
+	public void getScreenShotList(bool forward = false) {
 		StartCoroutine (screenShotList (forward));
 	}
 
@@ -1283,10 +1284,11 @@ public class AppController : MonoBehaviour
 		yield return w;
 		
 		if (w.error != null) {
-			DebugConsole.Log ("Network not available. "+w.error);
-		} 
-		
-		//DebugConsole.Log ("Cass count: " + shotNo+ " hash: "+hash);
+			DebugConsole.Log ("Network not available. " + w.error);
+		} else {
+			getCassetteList();
+		}
+
 	}
 
 	IEnumerator deleteFiles(JSONNode json) {
@@ -1307,15 +1309,9 @@ public class AppController : MonoBehaviour
 		if (w.error != null) {
 			DebugConsole.Log ("Network not available. "+w.error);
 		} else {
-			/*if(w.text.Length == 0) {
-				shotNo = 0;
-			} else {
-				shotNo = System.Convert.ToInt32(w.text);
-			}*/
-			
+			getScreenShotList ();
 			DebugConsole.Log ("Finished call to web "+w.text);	
 		}
-		
 		//DebugConsole.Log ("Cass count: " + shotNo+ " hash: "+hash);
 	}
 }
