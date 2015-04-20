@@ -31005,7 +31005,7 @@ Transform:
   - {fileID: 934411997}
   - {fileID: 216592568}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!95 &568990121
 Animator:
   serializedVersion: 3
@@ -48077,7 +48077,7 @@ Transform:
   - {fileID: 1163130269}
   - {fileID: 1849502111}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!65 &822702259
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -74055,7 +74055,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Hi <name_here>, to get started with this sim you'll need to know a couple
+  m_Text: "Hi Mr Barham, to get started with this sim you'll need to know a couple
     of basics.  \n\nNavigation: To move, click a short way in front of you a pulsating
     green circle will appear, the camera will move to this destination.\n\nAnything
     with an eye           can be picked up by clicking on it. When things are picked
@@ -85473,7 +85473,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400058, guid: bb5917ac35e8d4c62ad5ce5f02bd14b9, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1422940336}
-  m_LocalRotation: {x: .638866007, y: .140614256, z: .690548599, w: -.308578402}
+  m_LocalRotation: {x: .638865948, y: .140614241, z: .690548539, w: -.308578372}
   m_LocalPosition: {x: 27.8816528, y: 26.7537613, z: -13.1479053}
   m_LocalScale: {x: 1.00000024, y: .999999821, z: .99999994}
   m_Children: []
