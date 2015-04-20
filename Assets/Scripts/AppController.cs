@@ -629,7 +629,7 @@ public class AppController : MonoBehaviour
 		if (Input.anyKey) {
 			override_inv += Input.inputString;
 
-				if(override_inv.ToLower().Equals(override_val)) {
+			if(override_inv.ToLower().Equals(override_val)) {
 				if (overrideInventory != null && toggleOverrideInventory) {
 					foreach(InventoryItem item in overrideInventory) {
 						if(item.isOneOf > 0) {
@@ -639,11 +639,12 @@ public class AppController : MonoBehaviour
 						}
 					}
 				}
-
-				if(override_inv.Length > override_val.Length) {
-					override_inv = "";
-				}
 			}
+
+			if(override_inv.Length > override_val.Length) {
+				override_inv = "";
+			}
+			
 		}
 
 	/*	if (cassetteInputUI != null && cassetteInputUI.activeInHierarchy && cassetteInputUI.GetComponentInChildren<UnityEngine.UI.InputField> ().isFocused) {
